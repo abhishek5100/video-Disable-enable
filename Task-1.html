@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .video-container {
+            position: relative;
+        }
+
+        #toggleButton {
+            position: absolute;
+            top: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-container">
+        <video id="myVideo" width="320" height="240">
+            <source src="vedio/vedio.mp4" type="video/mp4">
+        </video>
+        <button id="toggleButton">play</button>
+    </div>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const video = document.getElementById('myVideo');
+            const toggleButton = document.getElementById('toggleButton');
+                         video.style.opacity = 0.5
+            toggleButton.addEventListener('click', function () {
+                if (video.hasAttribute('disabled')) {
+                    video.removeAttribute('disabled');
+                    video.style.opacity = 1
+                    alert("tring to paly ht vedio")
+                    toggleButton.textContent = 'ok you can play';
+                    video.controls = true;
+                } else {
+                   
+                    video.setAttribute('disabled', '');
+                    toggleButton.textContent = 'Enable Video';
+                    video.controls = false;
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
